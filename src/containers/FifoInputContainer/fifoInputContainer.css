@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.main.fifo-input {
+    display: block;
+}
+
+.process-main.fifo-input {
+    display: flex;
+    width: 800px;
+}
+
+.process-container.fifo-input {
+    height: 70px;
+    background: #e8e8e8;
+    width: 97%;
+    border-radius: 10px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.process-container.fifo-input>* {
+    margin-right: 10px;
+}

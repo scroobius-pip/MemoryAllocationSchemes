@@ -1,0 +1,13 @@
+.round-process {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background: none;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    text-align: center;
+    color: darkgray;
+    font-size: 20px;
+    outline: none;
+}

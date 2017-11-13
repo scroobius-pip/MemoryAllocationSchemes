@@ -1,0 +1,9 @@
+.process-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}

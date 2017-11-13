@@ -1,0 +1,25 @@
+.process-block {
+    height: 100px;
+    background-color: #f1f1f1;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    
+}
+
+.pid {
+    font-size: 30px;
+    color:white;
+}
+
+.order{
+    position: absolute;
+    top: 36px;
+    left: 82px;
+    font-size: 20px;
+}
+
+.empty{
+    background-color: lightgray;
+}

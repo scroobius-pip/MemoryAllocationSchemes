@@ -1,0 +1,26 @@
+.add {
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #57C48E;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 5px 30px, rgba(0, 0, 0, 0.2) 0px 1px 10px;
+    background-color: white;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.add:active {
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 5px 30px, rgba(0, 0, 0, 0.239216) 0px 0px 0px;
+}
+
+.add:focus {
+    outline: 0px;
+}
+
+.add.disabled {
+    background-color: #EBEBEB;
+    box-shadow: none;
+}
