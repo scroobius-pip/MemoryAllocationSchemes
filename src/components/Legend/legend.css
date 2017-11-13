@@ -1,0 +1,20 @@
+.legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color.legend {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2), 0 1px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.description.legend {
+    display: inline-block;
+    margin-left: 15px;
+    color: #95989A;
+
+}

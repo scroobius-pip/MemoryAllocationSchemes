@@ -1,0 +1,16 @@
+
+.main.legend {
+    display: block;
+}
+
+.legend-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+
+.legend-container>* {
+    margin-left: 15px;
+}

@@ -12,18 +12,17 @@
     text-align: center;
 }
 
-.process-block.fixed>p,
-span {
+.process-block.fixed>* {
     color: black;
 }
 
-.mb {
+.mb.fixed {
     font-weight: 700;
     color: black;
     margin-left: 5px;
 }
 
-.process-used {
+.process-used.fixed {
     display: inline-block;
     position: relative;
     border-style: dashed;
@@ -64,7 +63,7 @@ span {
     color: #f71735;
 }
 
-.info {
+.info.fixed {
     display: inline-block;
 }
 

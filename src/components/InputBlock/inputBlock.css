@@ -1,0 +1,14 @@
+.input-block {
+    margin-bottom: 40px;
+}
+
+.input-block > * {
+    margin-bottom: 20px;
+}
+
+.description {
+    display: block;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(149, 152, 154);
+}

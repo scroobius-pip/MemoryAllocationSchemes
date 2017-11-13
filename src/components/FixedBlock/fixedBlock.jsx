@@ -7,16 +7,16 @@ export default function fixedBlock ({pid, usedSize, fragmentSize, removeButton})
   return (pid !== undefined
         ? (
           <div class='process-block fixed'>
-            <div class='process-used' style={{flex: usedFlex}}>
-              <div class='info'>
+            <div class='process-used fixed' style={{flex: usedFlex}}>
+              <div class='info fixed'>
                 <p class='pid fixed'>{`Process #${pid}`}</p>
-                <p class='size fixed'>{usedSize}<span class='mb'>MB</span>
+                <p class='size fixed'>{usedSize}<span class='mb fixed'>MB</span>
                 </p>
               </div>
               {removeButton}
             </div>
             <div class='process-fragment' style={{flex: fragmentFlex}}>
-              <p class='size'>{fragmentSize}<span class='mb'>MB</span>
+              <p class='size'>{fragmentSize}<span class='mb fixed'>MB</span>
               </p>
             </div>
           </div>
