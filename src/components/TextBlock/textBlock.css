@@ -1,0 +1,64 @@
+.text-wrap.tb {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;    
+    
+}
+
+
+.vertical-line.tb {
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    background-color: rgb(149, 152, 154);
+}
+
+.mb.tb {
+    font-weight: 600;
+    color: rgb(149, 152, 154);
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+
+.round-process.tb {
+    box-sizing: border-box;    
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid rgb(149, 152, 154);
+    text-align: left;
+    color: darkgray;
+    font-size: 20px;
+    outline: none;
+    padding-left: 15px;
+    text-transform: capitalize;
+    background: none;
+    margin-right: 5px;
+}
+
+.round-process.tb::placeholder{
+    font-size: 15px;
+    font-family: 'Segoe UI';
+    text-align: left;
+    margin-left: 2px;
+    font-weight: 600;
+    color: rgb(149, 152, 154)
+    
+
+}
+
+.round-process.small.tb {
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+

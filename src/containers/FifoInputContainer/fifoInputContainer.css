@@ -3,15 +3,18 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
+    font-family: Segoe UI;
+    
 }
 
 .main.fifo-input {
     display: block;
+    margin-top: 50px;
 }
 
 .process-main.fifo-input {
     display: flex;
-    width: 800px;
+    width: 97%;
 }
 
 .process-container.fifo-input {

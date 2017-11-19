@@ -16,7 +16,7 @@
 }
 
 
-.fragment-block {
+.fragment-block.dynamic {
     height: 80px;
     background: white;
     width: 20px;
@@ -37,21 +37,19 @@
     min-width: 50px;
 }
 
-.fragment-block .size {
+
+
+.fragment-block.dynamic .size.dynamic .mb.dynamic {
     color: #FF9F1C;
 }
 
-.fragment-block .size .mb {
-    color: #FF9F1C;
-}
-
-.size,
-.pid {
+/* .size.dynamic,
+.pid.dyanamic {
     color: #011627;
     margin-bottom: 10px
-}
+} */
 
-.mb {
+.mb.dynamic {
     font-weight: 800;
     color: black;
     margin-left: 5px;

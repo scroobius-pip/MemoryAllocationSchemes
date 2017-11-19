@@ -1,4 +1,13 @@
+.fixed {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 .process-block.fixed {
+    
     height: 80px;
     background: white;
     width: 20px;
@@ -12,7 +21,7 @@
     text-align: center;
 }
 
-.process-block.fixed>* {
+.process-block.fixed p span  {
     color: black;
 }
 
@@ -24,7 +33,6 @@
 
 .process-used.fixed {
     display: inline-block;
-    position: relative;
     border-style: dashed;
     height: 100%;
     width: 70%;
@@ -36,10 +44,10 @@
     padding-bottom: 2px;
     position: relative;
     padding-top: 12px;
-    min-width: 100px;
+    min-width: 90px;
 }
 
-.process-fragment {
+.process-fragment.fixed {
     margin-left: 2px;
     display: inline-block;
     border-style: dashed;
@@ -54,12 +62,12 @@
     min-width: 60px;
 }
 
-.process-fragment>.size {
+.process-fragment.fixed>.size.fixed {
     color: #f71735;
     font-size: .9em
 }
 
-.process-fragment>.size>.mb {
+.process-fragment.fixed>.size.fixed>.mb.fixed {
     color: #f71735;
 }
 
@@ -88,7 +96,7 @@
     justify-content: center;
 }
 
-.empty>p {
+.empty.fixed>p {
     color: gray;
     text-align: center;
 }

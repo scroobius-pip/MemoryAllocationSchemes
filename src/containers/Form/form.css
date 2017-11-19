@@ -1,0 +1,11 @@
+.main.form>* {
+    /* margin: 0px; */
+    padding: 0px;
+    box-sizing: border-box;
+    color: rgb(149, 152, 154);
+    font-family: Segoe UI
+}
+
+.main.form {
+    display: block;
+}

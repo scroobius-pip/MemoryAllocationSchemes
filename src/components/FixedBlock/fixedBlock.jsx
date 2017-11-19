@@ -1,7 +1,8 @@
 import React from 'react'
+import RemoveButton from '../RemoveButton'
 import './fixedBlock.css'
 
-export default function fixedBlock ({pid, usedSize, fragmentSize, removeButton}) {
+export default function fixedBlock ({pid, usedSize, fragmentSize, onRemoveClicked}) {
   const total = usedSize + fragmentSize
   const [usedFlex, fragmentFlex] = [usedSize / total, fragmentSize / total]
   return (pid !== undefined
@@ -13,10 +14,10 @@ export default function fixedBlock ({pid, usedSize, fragmentSize, removeButton})
                 <p class='size fixed'>{usedSize}<span class='mb fixed'>MB</span>
                 </p>
               </div>
-              {removeButton}
+              <RemoveButton onClick={onRemoveClicked} />
             </div>
-            <div class='process-fragment' style={{flex: fragmentFlex}}>
-              <p class='size'>{fragmentSize}<span class='mb fixed'>MB</span>
+            <div class='process-fragment fixed' style={{flex: fragmentFlex, display: (fragmentFlex === 0 ? 'none' : '') }}>
+              <p class='size fixed'>{fragmentSize}<span class='mb fixed'>MB</span>
               </p>
             </div>
           </div>

@@ -1,17 +1,19 @@
 import React from 'react'
 import './processContainer.css'
+import RefreshButton from '../../components/RefreshButton'
+
 export default function processContainer ({children, memoryInfo, refresh}) {
   return (
-    <div className='main'>
-      <div className='process-main'>
-        <div className='process-container'>
+    <div className='main pc'>
+      <div className='process-main pc'>
+        <div className='process-container pc'>
           {children}
-          <span className='memory-info'>
+          <span className='memory-info pc'>
             {memoryInfo}
-            <span className='mb'>MB</span>
+            <span className='mb pc'>MB</span>
           </span>
         </div>
-        {refresh}
+        <RefreshButton onClick={refresh} />
       </div>
     </div>
   )

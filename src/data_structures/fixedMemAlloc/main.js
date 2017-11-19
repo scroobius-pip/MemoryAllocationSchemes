@@ -42,7 +42,8 @@ export default class FixedMemAlloc {
     var sum = 0
     for (let x = 0; x < this._divisions; x++) {
       if (this._processes[x] != null) {
-        sum += this._partition_size - this._processes[x]['size']
+        // sum += this._partition_size - this._processes[x]['size']
+        sum += this._processes[x]['fragment']
       }
     }
     return sum
@@ -55,7 +56,7 @@ export default class FixedMemAlloc {
     else {
       for (let x = 0; x < this._divisions; x++) {
         if (this._processes[x] === null || this._processes[x]['pid'] === pid) {
-          this._processes[x] = {pid, size}
+          this._processes[x] = {pid, size, fragment: this._partition_size - size}
           return this._processes
         }
       }
