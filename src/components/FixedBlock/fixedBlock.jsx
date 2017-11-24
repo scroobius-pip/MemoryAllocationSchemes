@@ -5,9 +5,11 @@ import './fixedBlock.css'
 export default class fixedBlock extends Component {
   // console.log('name received from fixeblock ' + name)
 
-  render ({pid, usedSize, fragmentSize, onRemoveClicked, name}) {
+  render () {
+    const {pid, usedSize, fragmentSize, onRemoveClicked, name} = this.props
     const total = usedSize + fragmentSize
     const [usedFlex, fragmentFlex] = [usedSize / total, fragmentSize / total]
+    console.log('recevied from fixedBlock ' + name)
     return (pid !== undefined
         ? (
           <div class='process-block fixed'>

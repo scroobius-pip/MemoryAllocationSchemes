@@ -85,7 +85,8 @@ export default class fixedBlock extends Component {
 
   handleButtonPressed (e) {
     const {InputDivisions, InputMemory, InputPid, InputProcessSize} = this.state
-    console.log(e.target.name)
+    // console.log(e.target.name)
+    console.log(e)
     switch (e.target.name) {
       case 'initMem':
         this.FixedMem.initMem(InputMemory, InputDivisions)
@@ -95,7 +96,7 @@ export default class fixedBlock extends Component {
         this.FixedMem.createProcess(InputPid, InputProcessSize)
         break
       case 'process':
-        this.FixedMem.removeProcess('1')
+        this.FixedMem.removeProcess(e.pid)
         break
       default:
         console.log(e.target.name)
@@ -112,24 +113,27 @@ export default class fixedBlock extends Component {
       <div className='block'>
         <h1>Fixed Memory Allocation Scheme</h1>
         <Form>
-          <InputBlock description='Total Memory'>
-            <TextBlock name='InputMemory' value={this.state.InputMemory} onChange={this.handleInputChange.bind(this)} />
-          </InputBlock>
-          <InputBlock description='No Of Divisions'>
-            <TextBlock name='InputDivisions' value={this.state.InputDivisions} onChange={this.handleInputChange.bind(this)} small />
-            <AddButton name='initMem' onClick={
+          {!this.state.MemoryInitialized ? (<div>
+            <InputBlock description='Total Memory'>
+              <TextBlock name='InputMemory' value={this.state.InputMemory} onChange={this.handleInputChange.bind(this)} />
+            </InputBlock>
+            <InputBlock description='No Of Divisions'>
+              <TextBlock name='InputDivisions' value={this.state.InputDivisions} onChange={this.handleInputChange.bind(this)} small />
+              <AddButton name='initMem' onClick={
               this.handleButtonPressed.bind(this)
 
           } disabled={this.state.MemoryInitialized} />
-          </InputBlock>
-          <InputBlock description='Add Process'>
+            </InputBlock>
+          </div>) : null}
+
+          {this.state.MemoryInitialized ? (<InputBlock description='Add Process'>
             <TextBlock name='InputProcessSize' value={this.state.InputProcessSize} onChange={this.handleInputChange.bind(this)} />
             <TextBlock small placeholder='Pid' name='InputPid' value={this.state.InputPid} onChange={this.handleInputChange.bind(this)} />
 
             <AddButton name='addProcess' onClick={
               this.handleButtonPressed.bind(this)
             } disabled={!this.state.MemoryInitialized} />
-          </InputBlock>
+          </InputBlock>) : null}
         </Form>
 
         {this.state.processes.length > 0 ? (
@@ -140,7 +144,7 @@ export default class fixedBlock extends Component {
 
               {this.state.processes.map(process => {
                 return (
-              process !== null ? <FixedBlock name='name' onRemoveClicked={this.handleButtonPressed.bind(this, process.pid)} key={process.pid} pid={process.pid} fragmentSize={process.fragment} usedSize={process.size} /> : <FixedBlock />
+              process !== null ? <FixedBlock name='process' onRemoveClicked={this.handleButtonPressed.bind(this, {pid: process.pid, target: {name: 'process'}})} key={process.pid} pid={process.pid} fragmentSize={process.fragment} usedSize={process.size} /> : <FixedBlock />
                 )
               })}
             </ProcessContainer>
