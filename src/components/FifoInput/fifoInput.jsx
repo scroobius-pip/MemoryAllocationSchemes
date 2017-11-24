@@ -7,5 +7,5 @@ export default function fifoInput ({onkeypress}) {
       onkeypress()
     }
   }
-  return (<input onKeyPress={handleKeyPress} className='round-process fifo-in' maxlength='2' type='text' />)
+  return (<input onKeyPress={handleKeyPress} className='round-process fifo-in' maxLength='2' type='text' />)
 }

@@ -1,5 +1,12 @@
 export default class FixedMemAlloc {
-  constructor (totalMem, divisions) {
+  constructor () {
+    this._totalMem = 0
+    this._divisions = 0
+    this._partition_size = 0
+    this._processes = []
+  }
+
+  initMem (totalMem, divisions) {
     this._totalMem = Math.abs(totalMem)
     this._divisions = Math.abs(divisions)
     this._partition_size = this._totalMem / this._divisions

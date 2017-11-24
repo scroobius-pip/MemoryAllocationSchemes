@@ -1,8 +1,8 @@
 import FixedMemAlloc from './main'
 const totalMem = 1400
 const divisions = 4
-const fixedMemAlloc = new FixedMemAlloc(totalMem, divisions)
-
+const fixedMemAlloc = new FixedMemAlloc() // new FixedMemAlloc(totalMem, divisions)
+fixedMemAlloc.initMem(totalMem, divisions)
 test('variables should be same as declared', () => {
   expect(fixedMemAlloc.totalMem).toBe(totalMem)
   expect(fixedMemAlloc.divisions).toBe(divisions)
@@ -69,7 +69,7 @@ test('internal fragmentation should be correct', () => {
   expect(fixedMemAlloc.internalFragmentation).toBe(320)
 })
 
-test('Just general testing stuff', () => {
+test('Just checking stuff', () => {
   fixedMemAlloc.clearPartions()
   fixedMemAlloc.createProcess('1', 140)
   fixedMemAlloc.createProcess('1', 150)
@@ -83,4 +83,14 @@ test('Just general testing stuff', () => {
   // fixedMemAlloc.clearPartions()
 
   console.log(fixedMemAlloc.processes, `total space ${fixedMemAlloc.totalMem}`, `remaining space ${fixedMemAlloc.spaceRemaining}`, `fragmented space ${fixedMemAlloc.internalFragmentation}`)
+})
+
+test('processes should be an array when reinitialized', () => {
+  fixedMemAlloc.initMem(totalMem, divisions)
+  expect(Array.isArray(fixedMemAlloc.processes)).toBe(true)
+})
+
+test('Array elements should be null when reinitialized', () => {
+  fixedMemAlloc.initMem(totalMem, divisions)
+  expect(fixedMemAlloc.processes[0]).toBe(null)
 })
