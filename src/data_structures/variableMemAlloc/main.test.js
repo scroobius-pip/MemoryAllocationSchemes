@@ -1,6 +1,8 @@
 import VariableMemAlloc from './main'
+import variableBlock from '../../containers/Blocks/variableBlockContainer'
 const totalMem = 1400
-const variableMemAlloc = new VariableMemAlloc(totalMem, 'firstfit')
+const variableMemAlloc = new VariableMemAlloc()
+variableMemAlloc.initMem(totalMem, 'firstfit')
 
 test('variables should be same as declared', () => {
   expect(variableMemAlloc.totalMem).toBe(totalMem)
@@ -18,6 +20,17 @@ test('createProcess should return an object if size is equal or less', () => {
   variableMemAlloc.clearProcesses()
   expect(typeof variableMemAlloc.createProcess('1', 30)).toBe('object')
     // console.log(variableMemAlloc.processes)
+})
+
+test("createProcess shouldn't create another process instance if already exists", () => {
+  variableMemAlloc.clearProcesses()
+  variableMemAlloc.createProcess('1', 100)
+  variableMemAlloc.createProcess('1', 100)
+  expect(variableMemAlloc.processes.length).toBe(1)
+  variableMemAlloc.clearProcesses()
+  variableMemAlloc.createProcess('1', 100)
+  variableMemAlloc.createProcess('1', 300)
+  expect(variableMemAlloc.processes.length).toBe(1)
 })
 
 test("removeProcess should return an false if pid doesn't exist", () => {
@@ -49,7 +62,9 @@ test('expect external fragmentation to be correct', () => {
 })
 
 test('Checking memory allocation order for bestfit', () => {
-  const bestFitMemAlloc = new VariableMemAlloc(500, 'bestfit')
+  // const bestFitMemAlloc = new VariableMemAlloc(500, 'bestfit')
+  const bestFitMemAlloc = new VariableMemAlloc()
+  bestFitMemAlloc.initMem(500, 'bestfit')
   bestFitMemAlloc.createProcess(1, 10)
   bestFitMemAlloc.createProcess(2, 20)
   bestFitMemAlloc.createProcess(3, 50)
@@ -67,7 +82,9 @@ test('Checking memory allocation order for bestfit', () => {
 })
 
 test('Checking memory allocation order for worstFit', () => {
-  const bestFitMemAlloc = new VariableMemAlloc(500, 'worstfit')
+  // const bestFitMemAlloc = new VariableMemAlloc(500, 'worstfit')
+  const bestFitMemAlloc = new VariableMemAlloc()
+  bestFitMemAlloc.initMem(500, 'worstfit')
   bestFitMemAlloc.createProcess(1, 10)
   bestFitMemAlloc.createProcess(2, 20)
   bestFitMemAlloc.createProcess(3, 50)

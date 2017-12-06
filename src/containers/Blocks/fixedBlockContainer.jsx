@@ -85,7 +85,6 @@ export default class fixedBlock extends Component {
 
   handleButtonPressed (e) {
     const {InputDivisions, InputMemory, InputPid, InputProcessSize} = this.state
-    // console.log(e.target.name)
     console.log(e)
     switch (e.target.name) {
       case 'initMem':

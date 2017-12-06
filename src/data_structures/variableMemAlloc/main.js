@@ -1,5 +1,17 @@
 export default class VariableMemAlloc {
+  // constructor () {
+  //   this._totalMem = 0
+  //   this._processes = []
+  //   this._method = ''
+  // }
   constructor (totalMem, method) {
+    if (totalMem !== undefined && method !== undefined) {
+      this._totalMem = Math.abs(totalMem)
+      this._processes = []
+      this._method = method
+    }
+  }
+  initMem (totalMem, method) {
     this._totalMem = Math.abs(totalMem)
     this._processes = []
     this._method = method
@@ -138,7 +150,7 @@ export default class VariableMemAlloc {
     for (let x = 0; x < this._processes.length; x++) {
       pid += '' // converting to string
       if (this._processes[x]['pid'] === pid) {
-        if (this._processes[x + 1] === undefined) {
+        if (this._processes[x + 1] === undefined || this._processes[x + 1]['pid'] === null) {
           this._processes.pop()
           return this._processes
         } else {

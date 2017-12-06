@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 80px;
+    min-width: 100px;
 }
 
 
@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     color: #FF9F1C;
-    min-width: 50px;
+    min-width: 80px;
 }
 
 

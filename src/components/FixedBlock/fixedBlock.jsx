@@ -3,8 +3,6 @@ import RemoveButton from '../RemoveButton'
 import './fixedBlock.css'
 
 export default class fixedBlock extends Component {
-  // console.log('name received from fixeblock ' + name)
-
   render () {
     const {pid, usedSize, fragmentSize, onRemoveClicked, name} = this.props
     const total = usedSize + fragmentSize
